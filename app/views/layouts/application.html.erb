@@ -17,54 +17,60 @@
         <div class="container">
           <%= link_to "Bookers", root_path, class: 'navbar-brand' %>
 
-          <ul class="navbar-nav ml-auto">
-            <li>
-              <%= link_to root_path, class: "nav-link text-light px-2" do %>
-                <i class="fa-solid fa-home"></i>
-                <span>Home</span>
-              <% end %>
-            </li>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <% if user_signed_in? %>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
               <li>
-                <%= link_to users_path, class: "nav-link text-light px-2" do %>
-                  <i class="fa-solid fa-users"></i>
-                  <span>Users</span>
+                <%= link_to root_path, class: "nav-link text-light px-2" do %>
+                  <i class="fa-solid fa-home"></i>
+                  <span>Home</span>
                 <% end %>
               </li>
-              <li>
-                <%= link_to books_path, class: "nav-link text-light px-2" do %>
-                  <i class="fa-solid fa-book-open"></i>
-                  <span>Book</span
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light px-2" do %>
-                  <i class="fa-solid fa-sign-out-alt"></i>
-                  <span>Log out</span>
-                <% end %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to about_path, class: "nav-link text-light px-2" do %>
-                  <i class="fa-solid fa-link"></i>
-                  <span>About</span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_registration_path, class: "nav-link text-light px-2" do %>
-                  <i class="fa-solid fa-user-plus"></i>
-                  <span>Sign in</span>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_user_session_path, class: "nav-link text-light px-2" do %>
-                  <i class="fa-solid fa-sign-in-alt"></i>
-                  <span>Log in</span>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
+
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to users_path, class: "nav-link text-light px-2" do %>
+                    <i class="fa-solid fa-users"></i>
+                    <span>Users</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to books_path, class: "nav-link text-light px-2" do %>
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Book</span
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light px-2" do %>
+                    <i class="fa-solid fa-sign-out-alt"></i>
+                    <span>Log out</span>
+                  <% end %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to about_path, class: "nav-link text-light px-2" do %>
+                    <i class="fa-solid fa-link"></i>
+                    <span>About</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_registration_path, class: "nav-link text-light px-2" do %>
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Sign in</span>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_session_path, class: "nav-link text-light px-2" do %>
+                    <i class="fa-solid fa-sign-in-alt"></i>
+                    <span>Log in</span>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
