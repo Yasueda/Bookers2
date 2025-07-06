@@ -21,7 +21,7 @@
             <li>
               <%= link_to root_path, class: "nav-link text-light px-2" do %>
                 <i class="fa-solid fa-home"></i>
-                Home
+                <span>Home</span>
               <% end %>
             </li>
 
@@ -29,38 +29,38 @@
               <li>
                 <%= link_to users_path, class: "nav-link text-light px-2" do %>
                   <i class="fa-solid fa-users"></i>
-                  Users
+                  <span>Users</span>
                 <% end %>
               </li>
               <li>
                 <%= link_to books_path, class: "nav-link text-light px-2" do %>
                   <i class="fa-solid fa-book-open"></i>
-                  Book
-                 <% end %>
+                  <span>Book</span
+                <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light px-2" do %>
                   <i class="fa-solid fa-sign-out-alt"></i>
-                  Log out
+                  <span>Log out</span>
                 <% end %>
               </li>
             <% else %>
               <li>
                 <%= link_to about_path, class: "nav-link text-light px-2" do %>
                   <i class="fa-solid fa-link"></i>
-                  About
+                  <span>About</span>
                 <% end %>
               </li>
               <li>
                 <%= link_to new_user_registration_path, class: "nav-link text-light px-2" do %>
                   <i class="fa-solid fa-user-plus"></i>
-                  Sign in
+                  <span>Sign in</span>
                 <% end %>
               </li>
               <li>
                 <%= link_to new_user_session_path, class: "nav-link text-light px-2" do %>
                   <i class="fa-solid fa-sign-in-alt"></i>
-                  Log in
+                  <span>Log in</span>
                 <% end %>
               </li>
             <% end %>
@@ -72,5 +72,13 @@
     <main>
       <%= yield %>
     </main>
+
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+         <p class="mx-auto">ConpyRight Infratop.inc<p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
