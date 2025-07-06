@@ -12,6 +12,65 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container">
+          <%= link_to "Bookers", root_path, class: 'navbar-brand' %>
+
+          <ul class="navbar-nav ml-auto">
+            <li>
+              <%= link_to root_path, class: "nav-link text-light px-2" do %>
+                <i class="fa-solid fa-home"></i>
+                Home
+              <% end %>
+            </li>
+
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to users_path, class: "nav-link text-light px-2" do %>
+                  <i class="fa-solid fa-users"></i>
+                  Users
+                <% end %>
+              </li>
+              <li>
+                <%= link_to books_path, class: "nav-link text-light px-2" do %>
+                  <i class="fa-solid fa-book-open"></i>
+                  Book
+                 <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light px-2" do %>
+                  <i class="fa-solid fa-sign-out-alt"></i>
+                  Log out
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to about_path, class: "nav-link text-light px-2" do %>
+                  <i class="fa-solid fa-link"></i>
+                  About
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_registration_path, class: "nav-link text-light px-2" do %>
+                  <i class="fa-solid fa-user-plus"></i>
+                  Sign in
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_session_path, class: "nav-link text-light px-2" do %>
+                  <i class="fa-solid fa-sign-in-alt"></i>
+                  Log in
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
