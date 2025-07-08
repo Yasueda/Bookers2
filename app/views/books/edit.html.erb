@@ -3,6 +3,17 @@
     <div class="col-lg-5 col-md-8 col-sm-12 px-5 px-sm-0">
       <h2 class="mt-3">Editing Book</h2>
 
+      <% if @book.errors.any? %>
+      <div class="error-box">
+          <h2><%= @book.errors.count %> errors prohibited this book from being:</h2>
+          <ul>
+           <% @book.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
+           <% end %>
+          </ul>
+        </div>
+      <% end %>
+
       <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
         <div class="field mb-3">
           <%= f.label :title, "Title" %><br />
