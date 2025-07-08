@@ -3,9 +3,9 @@
     <div class="error-box">
       <h2><%= book.errors.count %> errors prohibited this book from being:</h2>
       <ul>
-      <% book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

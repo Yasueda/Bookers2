@@ -27,8 +27,8 @@
               <% if user_signed_in? %>
                 <li>
                   <%= link_to user_path(current_user.id), class: "nav-link text-light px-2" do %>
-                  <i class="fa-solid fa-home"></i>
-                  <span>Home</span>
+                    <i class="fa-solid fa-home"></i>
+                    <span>Home</span>
                   <% end %>
                 </li>
                 <li>
@@ -82,13 +82,11 @@
     </header>
 
     <main>
-      <div>
-        <div class="text-success">
-          <%= flash[:notice] %>
-        </div>
-        <div class="text-danger">
-          <%= flash[:alert] %>
-        </div>
+      <div class="text-success">
+        <%= flash[:notice] %>
+      </div>
+      <div class="text-danger">
+        <%= flash[:alert] %>
       </div>
       <p class="my-3">
       <%= yield %>
